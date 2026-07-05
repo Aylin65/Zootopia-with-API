@@ -1,7 +1,7 @@
 import json
-import requests
+import data_fetcher
 
-API_KEY = "F1VH1NjfjZPoJdfDcXu6loDmleH3BpcMS4vyokYC" #kommt später in .env
+
 
 def load_data(file_path):
   """ Loads a JSON file """
@@ -15,14 +15,7 @@ def load_html_template(filepath):
         return handle.read()
 
 
-def load_data_from_api(animal_name):
-    """gets animal data from the ninja animals API."""
-    response = requests.get(
-        "https://api.api-ninjas.com/v1/animals",
-        headers={"X-Api-Key": API_KEY},
-        params={"name": animal_name}
-    )
-    return response.json()
+
 
 
 def serialize_animal(animal_obj):
@@ -60,8 +53,8 @@ def get_information(animals_data):
 
 animal_name = input("Enter the animal name to get the information: ")
 
-animals_data = load_data_from_api(animal_name)
-
+#animals_data = load_data_from_api(animal_name)
+animals_data = data_fetcher.fetch_data(animal_name)
 
 html_template = load_html_template("animals_template.html")
 
