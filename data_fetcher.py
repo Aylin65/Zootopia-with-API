@@ -2,9 +2,6 @@ import requests
 
 
 
-API_KEY = "F1VH1NjfjZPoJdfDcXu6loDmleH3BpcMS4vyokYC" #kommt später in .env
-
-
 def fetch_data(animal_name):
   """
   Fetches the animals data for the animal 'animal_name'.
