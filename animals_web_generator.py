@@ -58,7 +58,7 @@ def get_information(animals_data):
 
     return output
 
-animal_name = input("Enter the animal name to get the informations: ")
+animal_name = input("Enter the animal name to get the information: ")
 
 animals_data = load_data_from_api(animal_name)
 
